@@ -2,7 +2,7 @@ import os  # to access the path of directory, files or any other source we want 
 
 from dotenv import load_dotenv
 
-from langchain_community.document_loaders import UnstructuredPDFLoader
+from langchain_community.document_loaders import pypdf
 from langchain_text_splitters import RecursiveCharacterTextSplitter #which is used to split document text into smaller chunk
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
@@ -27,8 +27,11 @@ llm = ChatGroq(
 )
 
 def process_document_to_chroma_db(file_name):
-    # Load the pdf document using UnstructuredPDFLoader
-    loader = UnstructuredPDFLoader(f"{working_dir}/{file_name}")
+     # Full path of uploaded PDF
+    file_path = os.path.join(working_dir, file_name)
+
+    # Load PDF
+    loader = PyPDFLoader(file_path)
     documents = loader.load()
     #Split the text into chunks for embedding
     text_splitter = RecursiveCharacterTextSplitter(
