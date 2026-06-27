@@ -2,7 +2,7 @@ import os  # to access the path of directory, files or any other source we want 
 
 from dotenv import load_dotenv
 
-from langchain_community.document_loaders import pypdfLoader
+from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter #which is used to split document text into smaller chunk
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
