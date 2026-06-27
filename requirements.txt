@@ -1,6 +1,6 @@
 python-dotenv
-langchain==0.3.27
-langchain-community==0.3.27
+langchain
+langchain-community
 langchain-huggingface
 langchain-text-splitters
 unstructured
