@@ -7,7 +7,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter #which is us
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
 from langchain_groq import ChatGroq
-from langchain.chains import RetrievalQA
+from langchain_classic.chains import RetrievalQA
 
 # load environment variable from .env file
 
